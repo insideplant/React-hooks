@@ -2,16 +2,16 @@ import React, { useState } from 'react'
 
 function CounterHook() {
   const [count, setCount] = useState(0);
+  console.log(count);
 
   const incrementCount = () => {
-    setCount(count + 1);
+    setCount(prevCount => prevCount + 1);
   }
 
   const incrementCountTen = () => {
     for(let i=0; i < 10; i++){
-      setCount(prevCount => prevCount + 1)
-      console.log(count);
-    }
+      setCount(prevCount => prevCount + 1);
+    };
   }
   return (
     <div>
